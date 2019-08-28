@@ -1,0 +1,44 @@
+[data-title-before], [data-title-after] {
+    position: relative;
+}
+
+%basic-style {
+    font-size: .8rem;
+    font-weight: bold;
+    background-color: whitesmoke;
+    color: #343a40;
+    position: absolute;
+    padding: 1px 5px 2px 5px;
+    white-space: nowrap;
+    z-index: 99999;
+    display: none; 
+    border-radius: 10px; 
+}
+
+[data-title-before]:before {
+    @extend %basic-style;
+    content: attr(data-title-before);
+    margin-right: .2rem;
+    left: -4em;
+}
+
+[data-title-after]:after {
+    @extend %basic-style;
+    content: attr(data-title-after);
+    left: -1rem;
+    bottom: -1rem;
+}
+
+%hover-transformation {
+    display: inline;
+  }
+
+[data-title-before]:hover:before {
+    @extend %hover-transformation;
+    position: relative;
+    left: 0;
+}
+
+[data-title-after]:hover:after {
+    @extend %hover-transformation;
+}

@@ -1,0 +1,7 @@
+#postcard-container {
+  width: 100%;
+  height: 100%;
+  border-style: dashed;
+  border-color: darkgrey;
+  border-width: 2rem;
+}

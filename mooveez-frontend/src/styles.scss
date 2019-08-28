@@ -1,0 +1,28 @@
+@import "http://fonts.googleapis.com/css?family=Nunito";
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import 'styles/success.scss';
+@import 'styles/scrollbar.scss';
+
+* {
+  font-family: Nunito;
+  box-sizing: border-box;
+}   
+
+html, body {
+  overflow: hidden;
+  height: 100%;
+  background-color: #383c40;
+  color: white;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.success {
+  color: $success-green-color;
+} 
+
+.success:hover {
+  color: $success-green-color-hover;
+}

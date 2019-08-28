@@ -1,0 +1,22 @@
+.navbar {
+  padding: 0 1rem;
+}
+.shadowed {
+  -webkit-box-shadow: 0 8px 6px -6px #999;
+  -moz-box-shadow: 0 8px 6px -6px #999;
+  box-shadow: 0 8px 6px -6px #999;
+}
+.bottom-ul {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  justify-content: space-evenly;
+}
+.dropdown-toggle::after {
+  display: none;
+}
+.dropdown-menu {
+  left: -2.5em;
+  min-width: 6rem;
+  text-align: inherit;
+}

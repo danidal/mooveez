@@ -1,0 +1,71 @@
+<div id="movies-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+    <div class="carousel-inner">
+        <div *ngFor="let itemGroup of itemGroups" class="carousel-item">
+            <div *ngFor="let item of itemGroup.items" class="item-element"
+                    attr.data-pseudo-content="{{ item.posterUrl }}">
+                <h4 class="title">{{ item.title }}</h4>
+                <p class="plot">{{ item.plot }}</p>
+                <h4 class="title">The Great Train Robbery</h4>
+                <p class="plot">A group of bandits stage a brazen train hold-up, only to find a determined posse hot on their heels.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="movies-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="item-element-1">
+                <h4 class="title">The Great Train Robbery</h4>
+                <p class="plot">A group of bandits stage a brazen train hold-up, only to find a determined posse hot on their heels.</p>
+            </div>
+            <div class="item-element-1">
+                <h4 class="title">The Great Train Robbery</h4>
+                <p class="plot">A group of bandits stage a brazen train hold-up, only to find a determined posse hot on their heels.</p>
+            </div>
+            <div class="item-element-1">
+                <h4 class="title">The Great Train Robbery</h4>
+                <p class="plot">A group of bandits stage a brazen train hold-up, only to find a determined posse hot on their heels.</p>
+            </div>
+            <div class="item-element-1">
+                <h4 class="title">The Great Train Robbery</h4>
+                <p class="plot">A group of bandits stage a brazen train hold-up, only to find a determined posse hot on their heels.</p>
+            </div>
+            <div class="item-element-1">
+                <h4 class="title">The Great Train Robbery</h4>
+                <p class="plot">A group of bandits stage a brazen train hold-up, only to find a determined posse hot on their heels.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="item-element-2">
+                <img src="https://m.media-amazon.com/images/M/MV5BMTc1NTY3NDIzNl5BMl5BanBnXkFtZTgwNTIyODg5MTE@._V1_SY1000_SX677_AL_.jpg"/>
+                <h4 class="title">Les vampires</h4>
+                <p class="plot">An intrepid reporter and his loyal friend battle a bizarre secret society of criminals known as The Vampires.</p>
+            </div>
+            <div class="item-element-2">
+                <img src="https://m.media-amazon.com/images/M/MV5BMTc1NTY3NDIzNl5BMl5BanBnXkFtZTgwNTIyODg5MTE@._V1_SY1000_SX677_AL_.jpg"/>
+                <h4 class="title">Les vampires</h4>
+                <p class="plot">An intrepid reporter and his loyal friend battle a bizarre secret society of criminals known as The Vampires.</p>
+            </div>
+            <div class="item-element-2">
+                <img src="https://m.media-amazon.com/images/M/MV5BMTc1NTY3NDIzNl5BMl5BanBnXkFtZTgwNTIyODg5MTE@._V1_SY1000_SX677_AL_.jpg"/>
+                <h4 class="title">Les vampires</h4>
+                <p class="plot">An intrepid reporter and his loyal friend battle a bizarre secret society of criminals known as The Vampires.</p>
+            </div>
+            <div class="item-element-2">
+                <img src="https://m.media-amazon.com/images/M/MV5BMTc1NTY3NDIzNl5BMl5BanBnXkFtZTgwNTIyODg5MTE@._V1_SY1000_SX677_AL_.jpg"/>
+                <h4 class="title">Les vampires</h4>
+                <p class="plot">An intrepid reporter and his loyal friend battle a bizarre secret society of criminals known as The Vampires.</p>
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#movies-carousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#movies-carousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>

@@ -1,0 +1,7 @@
+.data-container {
+  padding: 2em 1em 1em 1em;
+  height: inherit;
+  overflow: auto;
+  text-align: left;
+  transition: height 1s;
+}

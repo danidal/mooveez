@@ -1,0 +1,13 @@
+
+<div class="relative-container full-height">
+    <div class="absolute-container full-height" id="absolute-container">
+        <app-movies-carousel [itemGroups]="itemGroups"></app-movies-carousel>
+        <app-movie-data-container [style.height]="up ? '85%' : '50%'"></app-movie-data-container>
+        <app-user-logout [currentUser]="currentUser" (logoutEvent)="logout($event)"></app-user-logout>
+    </div>
+    <div id="up-parent">
+        <button type="button" id="up" class="btn btn-light" (click)="resizeDataContainer()">
+            <b>up</b>
+        </button>
+    </div>
+</div>

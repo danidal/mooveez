@@ -1,0 +1,19 @@
+@import '../../../styles/success.scss';
+
+$box-shadow: 0 8px 6px -6px #999;
+
+@mixin box-shadow($property) {
+    -webkit-box-shadow: $property;
+    -moz-box-shadow: $property;
+    box-shadow: $property;
+}
+
+.navbar {
+    padding: 0 1rem;
+    border-bottom: 1px solid $success-color;
+    background: $semi-transparent-success-background;
+}
+
+.shadowed {
+    @include box-shadow($box-shadow);
+}

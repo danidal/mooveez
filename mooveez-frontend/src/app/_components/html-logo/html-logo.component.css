@@ -1,0 +1,14 @@
+h1 {
+  font-size: 50px;
+  display: inline-block;
+}
+p {
+  font-size: 26px;
+  margin-top: -10px;
+}
+span {
+  color: #28a745;
+}
+img {
+  width: 1em;
+}

@@ -1,0 +1,73 @@
+@import '../../../styles/success.scss';
+
+.sidebar {
+    border-right: 1px solid $success-color;
+    background: $semi-transparent-success-background;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    div {
+        height: 10%;
+        a {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            align-items: center;
+            border-radius: 0;
+            border: 0;
+            border-right: 2px solid $semi-transparent-success-background;
+            font-size: 1.5em;
+            text-align: left;
+            color: $success-color;
+            fa-icon {
+                margin-left: .5em;
+            }
+            span {
+                display: none;
+                margin-left: 1em;
+            }
+        }
+        a.btn-outline-warning {
+            color: #ffc107;
+        }
+        a.selected {
+            background: $light-transparent-success-background;
+        }
+        a:hover {
+            border-right: 2px solid red;
+            background: $success-background;
+        }
+        a.btn-outline-warning:hover {
+            color: #fff;
+            background: #ffc107;
+        }
+    }
+    
+}
+
+.sidebar:hover {
+    background: $middle-transparent-success-background;
+    div {
+        a {
+            color: #fff;
+            span {
+                display: block;
+            }
+        }
+        a.selected {
+            background: $light-transparent-white-background;
+        }
+        a.btn-outline-warning {
+            color: #ffc107;
+        }
+        a:hover {
+            background: $success-background;
+        }
+        a.btn-outline-warning:hover {
+            color: #fff;
+            background: #ffc107;
+        }
+    }
+}

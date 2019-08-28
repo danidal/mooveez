@@ -1,0 +1,8 @@
+.dropdown-toggle::after {
+  display: none;
+}
+.dropdown-menu {
+  left: -2.5em;
+  min-width: 6rem;
+  text-align: inherit;
+}
