@@ -25,12 +25,8 @@ import { UserLogoutComponent } from './_components/user-logout/user-logout.compo
 import { SidebarComponent } from './_components/sidebar/sidebar.component';
 import { HomeContentComponent } from './_components/home-content/home-content.component';
 import { MoviesCarouselComponent } from './_components/movies-carousel/movies-carousel.component';
-import { MoviesCarouselItemComponent } from './_components/movies-carousel-item/movies-carousel-item.component';
 import { MovieDataContainerComponent } from './_components/movie-data-container/movie-data-container.component';
-
-// used to create fake backend
-// import { fakeBackendProvider } from './_helpers/fake-backend';
-
+import { SpinnerComponent } from './_components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -46,8 +42,8 @@ import { MovieDataContainerComponent } from './_components/movie-data-container/
     SidebarComponent,
     HomeContentComponent,
     MoviesCarouselComponent,
-    MoviesCarouselItemComponent,
-    MovieDataContainerComponent
+    MovieDataContainerComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,

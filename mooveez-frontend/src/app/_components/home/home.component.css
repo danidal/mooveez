@@ -23,6 +23,9 @@
   .sidebar-container:hover {
     width: 180px;
   }
+  .content-container {
+    left: 70px;
+  }
 }
 @media only screen and (max-width: 767px) {
   app-sidebar {
@@ -31,6 +34,9 @@
   .content-container {
     width: 100%;
   }
+  .content-container {
+    left: 0;
+  }
 }
 .row {
   position: relative;
@@ -38,7 +44,4 @@
 .sidebar-container,
 .content-container {
   position: absolute;
-}
-.content-container {
-  left: 70px;
 }

@@ -10,13 +10,8 @@
     "start": "node server.js"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/danidal/smart-repo.git"
+    "type": "git"
   },
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/danidal/smart-repo/issues"
-  },
-  "homepage": "https://github.com/danidal/smart-repo#readme"
+  "license": "ISC"
 }
