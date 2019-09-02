@@ -5,3 +5,13 @@
   text-align: left;
   transition: height 1s;
 }
+.jumbotron {
+  background-color: #202121;
+  padding: 2rem;
+}
+.artists-lists-elem {
+  margin-bottom: 1em;
+}
+.artists-lists-elem p {
+  margin-bottom: 0.5em;
+}

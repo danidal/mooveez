@@ -1,34 +1,56 @@
 <div class="data-container">
-    <div class="first-line">
+    <div class="first-line jumbotron d-flex justify-content-between align-items-center">
         <div class="rating">Rating 7.4</div>
-        <div class="country">USA</div>
         <div class="year">1903</div>
+        <div class="country">USA</div>
     </div>
-    <div class="artists-lists">
-        <div class="directors">
-            <p>Directors</p>
-            <ul>
-                <li>Edwin S. Porter</li>
-            </ul>
-        </div>
-        <div class="writers">
-            <p>Writers</p>
-            <ul>
-                <li>Thomas H. Ince (story)</li>
-                <li>C. Gardner Sullivan (story)</li>
-            </ul>
-        </div>
-        <div class="cast">
-                <p>Cast</p>
-                <ul>
-                    <li>George Beban</li>
-                    <li>Clara Williams</li>
-                    <li>J. Frank Burke</li>
-                    <li>Leo Willis</li>
-                </ul>
+    <div class="row">
+        <div class="artists-lists col-sm-4">
+            <div class="artists-lists-elem">
+                <p>
+                    <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#directors" aria-expanded="false" aria-controls="directors">
+                        Directors
+                    </button>
+                </p>
+                <div class="collapse" id="directors">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action">Edwin S. Porter</a>
+                    </div>
+                </div>
             </div>
-    </div>
-    <div class="fullplot">
-        Kate and her actor brother live in N.Y. in the 21st Century. Her ex-boyfriend, Stuart, lives above her apartment. Stuart finds a space near the Brooklyn Bridge where there is a gap in time. He goes back to the 19th Century and takes pictures of the place. Leopold -- a man living in the 1870s -- is puzzled by Stuart's tiny camera, follows him back through the gap, and they both ended up in the present day. Leopold is clueless about his new surroundings. He gets help and insight from Charlie who thinks that Leopold is an actor who is always in character. Leopold is a highly intelligent man and tries his best to learn and even improve the modern conveniences that he encounters.
+            <div class="artists-lists-elem">
+                <p>
+                    <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#writers" aria-expanded="false" aria-controls="writers">
+                        Writers
+                    </button>
+                </p>
+                <div class="collapse" id="writers">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action">Thomas H. Ince (story)</a>
+                        <a href="#" class="list-group-item list-group-item-action">C. Gardner Sullivan (story)</a>
+                    </div>
+                </div>
+            </div>
+            <div class="artists-lists-elem">
+                <p>
+                    <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#cast" aria-expanded="false" aria-controls="cast">
+                        Cast
+                    </button>
+                </p>
+                <div class="collapse" id="cast">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action">George Beban</a>
+                        <a href="#" class="list-group-item list-group-item-action">Clara Williams</a>
+                        <a href="#" class="list-group-item list-group-item-action">J. Frank Burke</a>
+                        <a href="#" class="list-group-item list-group-item-action">Leo Willis</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fullplot col-sm-8">
+            <div class=" jumbotron">
+                Kate and her actor brother live in N.Y. in the 21st Century. Her ex-boyfriend, Stuart, lives above her apartment. Stuart finds a space near the Brooklyn Bridge where there is a gap in time. He goes back to the 19th Century and takes pictures of the place. Leopold -- a man living in the 1870s -- is puzzled by Stuart's tiny camera, follows him back through the gap, and they both ended up in the present day. Leopold is clueless about his new surroundings. He gets help and insight from Charlie who thinks that Leopold is an actor who is always in character. Leopold is a highly intelligent man and tries his best to learn and even improve the modern conveniences that he encounters.
+            </div>
+        </div>
     </div>
 </div>

@@ -3,8 +3,10 @@ import { Router } from '@angular/router';
 
 import { AuthenticationService } from '../../_services/authentication.service';
 import { AlertService } from '../../_services/alert.service';
+import { MoviesService } from '../../_services/movies.service';
 
 import { User } from '../../_models/users';
+import { Movie } from 'src/app/_models/movies';
 
 @Component({
   selector: 'app-home-content',
@@ -16,11 +18,13 @@ export class HomeContentComponent implements OnInit {
   users = [];
   private up = true;
   groupDimension: number;
+  selectedMovie: Movie;
 
   constructor(
     private router: Router,
     private authenticationService: AuthenticationService,
-    private alertService: AlertService
+    private alertService: AlertService,
+    private moviesService: MoviesService
   ) {
     this.currentUser = this.authenticationService.currentUserValue;
   }
@@ -55,6 +59,10 @@ export class HomeContentComponent implements OnInit {
     const carouselHeight: number = window.innerHeight / 2;
     const carouselRelation: number = carouselWidth * 1.5 / carouselHeight; // 1.5: average relation between height and width in posters
     return Math.round(carouselRelation);
+  }
+
+  selectMovie(id: string) {
+    this.selectedMovie = this.moviesService.getByIdFromLocal(id);
   }
 
 }

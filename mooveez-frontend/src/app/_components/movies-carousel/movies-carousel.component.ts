@@ -1,4 +1,4 @@
-import { Component, Input, AfterViewChecked, ChangeDetectorRef } from '@angular/core';
+import { Component, EventEmitter, Input, Output, AfterViewChecked, ChangeDetectorRef } from '@angular/core';
 import { MoviesService } from '../../_services/movies.service';
 
 @Component({
@@ -8,24 +8,26 @@ import { MoviesService } from '../../_services/movies.service';
 })
 export class MoviesCarouselComponent implements AfterViewChecked  {
   @Input() groupDimension: number;
+  @Output() selectMovieEvent: EventEmitter<any> = new EventEmitter<any>();
 
   private multiple = false;
   private loading = false;
   private itemGroups: any[];
 
-  constructor(private moviesService: MoviesService, private cdRef: ChangeDetectorRef) {
+  constructor(
+    private moviesService: MoviesService,
+    private cdRef: ChangeDetectorRef
+  ) {
     this.doSearch();
   }
 
   /* Hook that responds anytime the user interacts with the view: on hover, on sliding... */
   ngAfterViewChecked() {
-    debugger;
     this.doCarouselSettings();
     this.cdRef.detectChanges();
   }
 
   doCarouselSettings() {
-    debugger;
     const carouselItems = document.getElementsByClassName('carousel-item');
     this.activeFirstSlide(carouselItems);
     this.activeCarouselControls(carouselItems);
@@ -47,8 +49,8 @@ export class MoviesCarouselComponent implements AfterViewChecked  {
   doSearch() {
     this.loading = true;
     this.moviesService.getAll().then(() => {
-      debugger;
       this.itemGroups = this.divideMoviesInGroups(this.groupDimension);
+      debugger;
       this.loading = false;
     });
   }
@@ -72,6 +74,10 @@ export class MoviesCarouselComponent implements AfterViewChecked  {
       itemGroups.push(itemGroup);
     }
     return itemGroups;
+  }
+
+  selectMovie() {
+    this.selectMovieEvent.emit();
   }
 
 }

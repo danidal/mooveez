@@ -14,9 +14,6 @@ export class MoviesService {
   }
 
   getAll() {
-    debugger;
-    // return this.http.get<Movie[]>(`http://localhost:4000/movies`);
-
     const promise = new Promise((resolve, reject) => {
       this.http
         .get<Movie[]>(`http://localhost:4000/movies`)
@@ -25,6 +22,7 @@ export class MoviesService {
           res => {
             // Success
             this.movies = res;
+            debugger;
             resolve();
           },
           msg => {
@@ -34,6 +32,15 @@ export class MoviesService {
         );
     });
     return promise;
+  }
+
+  getByIdFromLocal(id: string) {
+    for (const movie of this.movies) {
+      debugger;
+      if (movie.id === id) {
+        return movie;
+      }
+    }
   }
 
 }
