@@ -1,0 +1,9 @@
+.artists-lists-elem {
+  margin-bottom: 1em;
+}
+.artists-lists-elem p {
+  margin-bottom: 0.5em;
+}
+.artists-lists-elem p button {
+  text-transform: capitalize;
+}

@@ -5,13 +5,18 @@
   text-align: left;
   transition: height 1s;
 }
+div[class^="col-"] {
+  margin-bottom: 1em;
+}
 .jumbotron {
   background-color: #202121;
   padding: 2rem;
 }
-.artists-lists-elem {
-  margin-bottom: 1em;
+.poster-container {
+  margin: auto;
 }
-.artists-lists-elem p {
-  margin-bottom: 0.5em;
+.badge {
+  padding: 1em;
+  margin-bottom: 1em;
+  display: block;
 }

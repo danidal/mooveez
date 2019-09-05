@@ -1,8 +1,11 @@
-#spinner {
+#spinner-container {
+  width: 100%;
+}
+#spinner-container #spinner {
   width: 5rem;
   height: 4rem;
 }
-#spinner img {
+#spinner-container #spinner img {
   width: 3rem;
   height: 3rem;
 }

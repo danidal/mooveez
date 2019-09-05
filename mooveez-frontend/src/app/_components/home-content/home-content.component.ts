@@ -45,13 +45,13 @@ export class HomeContentComponent implements OnInit {
     let buttonTop: string;
     if (this.up) {
         containerTop = '-35%';
-        buttonTop = '16%';
+        buttonTop = 'calc(15% - 13px)';
     } else {
         containerTop = '0%';
-        buttonTop = '51%';
+        buttonTop = 'calc(50% - 13px)';
     }
     document.getElementById('absolute-container').style.top = containerTop;
-    document.getElementById('up').style.top = buttonTop;
+    document.getElementById('up-parent').style.top = buttonTop;
   }
 
   private setGroupDimension() {

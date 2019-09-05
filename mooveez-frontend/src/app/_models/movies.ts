@@ -1,5 +1,5 @@
 export class Movie {
-    id: string;
+    _id: string;
     title: string;
     plot: string;
     poster: string;
@@ -14,4 +14,5 @@ export class Movie {
     year: number;
     awards: Map<string, string>;
     imdb: Map<string, string>;
+    favourite: boolean;
 }

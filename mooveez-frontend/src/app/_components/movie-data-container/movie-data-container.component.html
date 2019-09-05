@@ -1,55 +1,35 @@
 <div class="data-container">
-    <div class="first-line jumbotron d-flex justify-content-between align-items-center">
-        <div class="rating">Rating 7.4</div>
-        <div class="year">1903</div>
-        <div class="country">USA</div>
+    <h1>{{ movie.title }}
+        <app-clickable-star [movie]="movie"></app-clickable-star>
+    </h1> 
+    <div class="row align-items-center">
+        <div class="col-sm-6 col-lg-3">
+            <div class="jumbotron poster-container">
+                <img [attr.src]="movie.poster" class="full-width" onerror="this.src='assets/img/NoImageFound.png';"/>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+                <app-rating-chart [imdb]="movie.imdb"></app-rating-chart>
+            </div>
+        <div class="col-lg-6">
+            <div *ngIf="movie.year" class="year badge badge-primary">{{ movie.year}}</div>
+            <div *ngIf="movie.genres" class="country">
+                <div *ngFor="let genre of movie.genres" class="badge badge-primary">{{ genre }}</div>
+            </div>
+            <div *ngIf="movie.countries" class="country">
+                <div *ngFor="let country of movie.countries" class="badge badge-primary">{{ country }}</div>
+            </div>
+        </div>
     </div>
     <div class="row">
         <div class="artists-lists col-sm-4">
-            <div class="artists-lists-elem">
-                <p>
-                    <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#directors" aria-expanded="false" aria-controls="directors">
-                        Directors
-                    </button>
-                </p>
-                <div class="collapse" id="directors">
-                    <div class="list-group">
-                        <a href="#" class="list-group-item list-group-item-action">Edwin S. Porter</a>
-                    </div>
-                </div>
-            </div>
-            <div class="artists-lists-elem">
-                <p>
-                    <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#writers" aria-expanded="false" aria-controls="writers">
-                        Writers
-                    </button>
-                </p>
-                <div class="collapse" id="writers">
-                    <div class="list-group">
-                        <a href="#" class="list-group-item list-group-item-action">Thomas H. Ince (story)</a>
-                        <a href="#" class="list-group-item list-group-item-action">C. Gardner Sullivan (story)</a>
-                    </div>
-                </div>
-            </div>
-            <div class="artists-lists-elem">
-                <p>
-                    <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#cast" aria-expanded="false" aria-controls="cast">
-                        Cast
-                    </button>
-                </p>
-                <div class="collapse" id="cast">
-                    <div class="list-group">
-                        <a href="#" class="list-group-item list-group-item-action">George Beban</a>
-                        <a href="#" class="list-group-item list-group-item-action">Clara Williams</a>
-                        <a href="#" class="list-group-item list-group-item-action">J. Frank Burke</a>
-                        <a href="#" class="list-group-item list-group-item-action">Leo Willis</a>
-                    </div>
-                </div>
-            </div>
+            <app-artists-lists-elem *ngIf="movie.directors" [elems]="movie.directors" [name]="'directors'"></app-artists-lists-elem>
+            <app-artists-lists-elem *ngIf="movie.writers" [elems]="movie.writers" [name]="'writers'"></app-artists-lists-elem>
+            <app-artists-lists-elem *ngIf="movie.cast" [elems]="movie.cast" [name]="'cast'"></app-artists-lists-elem>
         </div>
-        <div class="fullplot col-sm-8">
-            <div class=" jumbotron">
-                Kate and her actor brother live in N.Y. in the 21st Century. Her ex-boyfriend, Stuart, lives above her apartment. Stuart finds a space near the Brooklyn Bridge where there is a gap in time. He goes back to the 19th Century and takes pictures of the place. Leopold -- a man living in the 1870s -- is puzzled by Stuart's tiny camera, follows him back through the gap, and they both ended up in the present day. Leopold is clueless about his new surroundings. He gets help and insight from Charlie who thinks that Leopold is an actor who is always in character. Leopold is a highly intelligent man and tries his best to learn and even improve the modern conveniences that he encounters.
+        <div *ngIf="movie.fullplot" class="fullplot col-sm-8">
+            <div class="jumbotron">
+                {{ movie.fullplot }}
             </div>
         </div>
     </div>

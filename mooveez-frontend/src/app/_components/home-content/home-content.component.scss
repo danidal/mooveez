@@ -9,26 +9,18 @@
 
 #up-parent {
     position: absolute;
-    top: 49%;
-    left: 1%;
+    left: 80%;
     line-height: 0;
     transition: top 1s;
-    #up {
+    .up {
         position: relative;
-        height: 0px;
-        width: 50px;
+        font-size: 1.5em;
+        background-color: transparent;
         padding: 0;
-        background-color: #f8f9fa;
+        color: pink;
     }
-    #up::after {
-        position:absolute;
-        right: -1px;
-        content: " ";
-        width: 0px;
-        height: 0px;
-        border-style: solid;
-        border-width: 25px 25px 25px 25px;
-        border-color: #f8f9fa transparent transparent transparent;
+    .up:focus {
+        box-shadow: none;
     }
 } 
     

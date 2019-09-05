@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faHome, faSearch, faStar } from '@fortawesome/free-solid-svg-icons';
-/*import { faStar } from '@fortawesome/free-regular-svg-icons';*/
+import { faHome, faSearch, faStar as fasStar, faArrowCircleUp,
+  faArrowCircleDown } from '@fortawesome/free-solid-svg-icons';
+import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 
 import { appRoutingModule } from './app.routing';
 
@@ -27,6 +29,10 @@ import { HomeContentComponent } from './_components/home-content/home-content.co
 import { MoviesCarouselComponent } from './_components/movies-carousel/movies-carousel.component';
 import { MovieDataContainerComponent } from './_components/movie-data-container/movie-data-container.component';
 import { SpinnerComponent } from './_components/spinner/spinner.component';
+import { MoviesCarouselItemElemComponent } from './_components/movies-carousel-item-elem/movies-carousel-item-elem.component';
+import { ArtistsListsElemComponent } from './_components/artists-lists-elem/artists-lists-elem.component';
+import { ClickableStarComponent } from './_components/clickable-star/clickable-star.component';
+import { RatingChartComponent } from './_components/rating-chart/rating-chart.component';
 
 @NgModule({
   declarations: [
@@ -43,10 +49,15 @@ import { SpinnerComponent } from './_components/spinner/spinner.component';
     HomeContentComponent,
     MoviesCarouselComponent,
     MovieDataContainerComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    MoviesCarouselItemElemComponent,
+    ArtistsListsElemComponent,
+    ClickableStarComponent,
+    RatingChartComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     appRoutingModule,
     FontAwesomeModule,
@@ -61,6 +72,6 @@ import { SpinnerComponent } from './_components/spinner/spinner.component';
 export class AppModule {
   constructor() {
     // Add an icon to the library for convenient access in other components
-    library.add(faHome, faSearch, faStar);
+    library.add(faHome, faSearch, fasStar, farStar, faArrowCircleUp, faArrowCircleDown);
   }
 }

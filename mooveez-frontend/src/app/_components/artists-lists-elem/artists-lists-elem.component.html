@@ -1,0 +1,12 @@
+<div class="artists-lists-elem">
+    <p>
+        <button class="btn btn-success" type="button" data-toggle="collapse" [attr.data-target]="'#' + name" aria-expanded="false" [attr.aria-controls]="name">
+            {{ name }}
+        </button>
+    </p>
+    <div class="collapse" [attr.id]="name">
+        <div class="list-group">
+            <a *ngFor="let elem of elems" href="#" class="list-group-item list-group-item-action">{{ elem }}</a>
+        </div>
+    </div>
+</div>

@@ -7,8 +7,7 @@
                 <div *ngFor="let item of itemGroup.items; let hover = false" 
                 class="item-element" (mouseover)="hover = true" (mouseleave)="hover = false"
                 [ngStyle]="!hover ? {'background-image': 'url(' + item.poster + ')', 'width': 100 / groupDimension + '%'} : {'background-image': 'linear-gradient(rgba(108,116,124, 0.5), rgba(108,116,124, 1)), url(' + item.poster + ')', 'width': 100 / groupDimension + '%'}">
-                    <h4 class="title">{{ item.title }}</h4>
-                    <p class="plot">{{ item.plot }}</p>
+                    <app-movies-carousel-item-elem [movie]="item" (selectMovieEvent)="selectMovie($event)"></app-movies-carousel-item-elem>
                 </div>
             </div>
         </div>

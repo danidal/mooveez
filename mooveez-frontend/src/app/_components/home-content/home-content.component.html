@@ -1,13 +1,27 @@
 
 <div class="relative-container full-height">
-    <div class="absolute-container full-height" id="absolute-container">
-        <app-movies-carousel [groupDimension]="groupDimension"></app-movies-carousel>
-        <app-movie-data-container [style.height]="up ? '85%' : '50%'"></app-movie-data-container>
-        <app-user-logout [currentUser]="currentUser" (logoutEvent)="logout($event)"></app-user-logout>
+    <div class="absolute-container full-height full-width" id="absolute-container">
+        <app-movies-carousel [groupDimension]="groupDimension" (selectMovieEvent)="selectMovie($event)">
+        </app-movies-carousel>
+        <app-movie-data-container *ngIf="selectedMovie" [style.height]="up ? '85%' : '50%'" [movie]="selectedMovie">
+        </app-movie-data-container>
+        <app-user-logout [currentUser]="currentUser" (logoutEvent)="logout($event)">
+        </app-user-logout>
     </div>
     <div id="up-parent">
-        <button type="button" id="up" class="btn btn-light" (click)="resizeDataContainer()">
-            <b>up</b>
-        </button>
+        <ng-container
+            *ngIf="up; then whenUp; else whenDown">
+        </ng-container>
+
+        <ng-template #whenUp>
+            <button type="button" class="btn up" (click)="resizeDataContainer()">
+                <fa-icon [icon]="['fas', 'arrow-circle-down']" size="lg"></fa-icon>
+            </button>
+        </ng-template>
+        <ng-template #whenDown>
+            <button type="button" class="btn up" (click)="resizeDataContainer()">
+                <fa-icon [icon]="['fas', 'arrow-circle-up']" size="lg"></fa-icon>
+            </button>
+        </ng-template>
     </div>
 </div>

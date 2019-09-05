@@ -1,7 +1,7 @@
 @import '../../../styles/success.scss';
 
 .sidebar {
-    border-right: 1px solid $success-color;
+    border-right: 1px solid $success-green-color;
     background: $semi-transparent-success-background;
     display: flex;
     flex-direction: column;
@@ -20,7 +20,7 @@
             border-right: 2px solid $semi-transparent-success-background;
             font-size: 1.5em;
             text-align: left;
-            color: $success-color;
+            color: $success-green-color;
             fa-icon {
                 margin-left: .5em;
             }
@@ -30,18 +30,18 @@
             }
         }
         a.btn-outline-warning {
-            color: #ffc107;
+            color: $golden;
         }
         a.selected {
             background: $light-transparent-success-background;
         }
         a:hover {
+            color: #fff;
             border-right: 2px solid red;
             background: $success-background;
         }
         a.btn-outline-warning:hover {
-            color: #fff;
-            background: #ffc107;
+            background: $golden;
         }
     }
     
@@ -60,14 +60,14 @@
             background: $light-transparent-white-background;
         }
         a.btn-outline-warning {
-            color: #ffc107;
+            color: $golden;
         }
         a:hover {
-            background: $success-background;
+            background: $success-green-background;
         }
         a.btn-outline-warning:hover {
             color: #fff;
-            background: #ffc107;
+            background: $golden;
         }
     }
 }

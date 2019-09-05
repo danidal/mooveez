@@ -23,7 +23,8 @@ const movieSchema = new Schema({
         rating: Number,
         votes: Number,
         id: Number
-      }
+      },
+    favourite: Boolean
 });
 
 movieSchema.set('toJSON');

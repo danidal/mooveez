@@ -6,15 +6,21 @@
     transition: height 1s;
 }
 
+div[class^='col-'] {
+    margin-bottom: 1em;
+}
+
 .jumbotron {
     background-color: #202121;
     padding: 2rem;
 }
 
-.artists-lists-elem {
-    margin-bottom: 1em;
-    p {
-        margin-bottom: .5em;
-    }
+.poster-container {
+    margin: auto;
 }
 
+.badge {
+    padding: 1em;
+    margin-bottom: 1em;
+    display: block;
+}

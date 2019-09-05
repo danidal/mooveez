@@ -50,7 +50,6 @@ export class MoviesCarouselComponent implements AfterViewChecked  {
     this.loading = true;
     this.moviesService.getAll().then(() => {
       this.itemGroups = this.divideMoviesInGroups(this.groupDimension);
-      debugger;
       this.loading = false;
     });
   }
@@ -76,8 +75,8 @@ export class MoviesCarouselComponent implements AfterViewChecked  {
     return itemGroups;
   }
 
-  selectMovie() {
-    this.selectMovieEvent.emit();
+  selectMovie(id: string) {
+    this.selectMovieEvent.emit(id);
   }
 
 }
