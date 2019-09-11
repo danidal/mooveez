@@ -1,0 +1,51 @@
+.no-padding {
+    padding: 0;
+}
+
+@media only screen and (min-width: 768px) {
+    app-navbar { 
+        display: none; 
+    }
+    .sidebar-container {
+        width: 70px;
+        z-index: 2;
+        transition: width .5s;
+    }
+    .sidebar-container:hover {
+        width: 180px;
+    }
+    .content-container {
+        overflow: auto;
+        width: calc(100% - 70px);
+        z-index: 1;
+    }
+    .sidebar-container:hover + .content-container{
+        opacity: .5;
+    }
+    .sidebar-container:hover {
+        width: 180px;
+    }
+    .content-container {
+        left: 70px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    app-sidebar { 
+        display: none; 
+    }
+    .content-container {
+        width: 100%;
+    }
+    .content-container {
+        left: 0;
+    }
+}
+
+.row {
+    position: relative;
+}
+
+.sidebar-container, .content-container {
+    position: absolute;
+}

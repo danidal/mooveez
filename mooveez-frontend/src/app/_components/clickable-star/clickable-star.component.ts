@@ -16,7 +16,6 @@ export class ClickableStarComponent {
   ) { }
 
   setFav() {
-    debugger;
     this.movie.favourite = !this.movie.favourite;
     this.moviesService.updateOneFav(this.movie._id, this.movie.favourite);
   }

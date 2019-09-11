@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, AfterViewChecked, ChangeDetectorRef } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit, AfterViewChecked, ChangeDetectorRef } from '@angular/core';
 import { MoviesService } from '../../_services/movies.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { MoviesService } from '../../_services/movies.service';
   templateUrl: './movies-carousel.component.html',
   styleUrls: ['./movies-carousel.component.scss']
 })
-export class MoviesCarouselComponent implements AfterViewChecked  {
+export class MoviesCarouselComponent implements OnInit, AfterViewChecked  {
   @Input() groupDimension: number;
   @Output() selectMovieEvent: EventEmitter<any> = new EventEmitter<any>();
 
@@ -17,7 +17,9 @@ export class MoviesCarouselComponent implements AfterViewChecked  {
   constructor(
     private moviesService: MoviesService,
     private cdRef: ChangeDetectorRef
-  ) {
+  ) { }
+
+  ngOnInit() {
     this.doSearch();
   }
 

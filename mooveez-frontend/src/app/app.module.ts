@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { MatAutocompleteModule, MatInputModule } from '@angular/material';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -33,6 +34,9 @@ import { MoviesCarouselItemElemComponent } from './_components/movies-carousel-i
 import { ArtistsListsElemComponent } from './_components/artists-lists-elem/artists-lists-elem.component';
 import { ClickableStarComponent } from './_components/clickable-star/clickable-star.component';
 import { RatingChartComponent } from './_components/rating-chart/rating-chart.component';
+import { CommentsDialogComponent } from './_components/comments-dialog/comments-dialog.component';
+import { SearchComponent } from './_components/search/search.component';
+import { SearchContentComponent } from './_components/search-content/search-content.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +57,10 @@ import { RatingChartComponent } from './_components/rating-chart/rating-chart.co
     MoviesCarouselItemElemComponent,
     ArtistsListsElemComponent,
     ClickableStarComponent,
-    RatingChartComponent
+    RatingChartComponent,
+    CommentsDialogComponent,
+    SearchComponent,
+    SearchContentComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +68,9 @@ import { RatingChartComponent } from './_components/rating-chart/rating-chart.co
     HttpClientModule,
     appRoutingModule,
     FontAwesomeModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatAutocompleteModule,
+    MatInputModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

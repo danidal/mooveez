@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AuthenticationService } from '../../_services/authentication.service';
@@ -14,6 +14,8 @@ import { Movie } from 'src/app/_models/movies';
   styleUrls: ['./home-content.component.scss']
 })
 export class HomeContentComponent implements OnInit {
+  @Output() selectMovieEvent: EventEmitter<any> = new EventEmitter<any>();
+
   currentUser: User;
   users = [];
   private up = true;
@@ -63,6 +65,7 @@ export class HomeContentComponent implements OnInit {
 
   selectMovie(id: string) {
     this.selectedMovie = this.moviesService.getByIdFromLocal(id);
+    this.selectMovieEvent.emit(id);
   }
 
 }

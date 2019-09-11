@@ -1,13 +1,14 @@
 <div class="d-flex justify-content-center align-items-center">
     <div class="single-chart full-width">
-        <svg viewBox="0 0 36 36" class="circular-chart orange">
+        <svg viewBox="0 0 36 36" class="circular-chart orange" data-toggle="modal" data-target=".bd-modal">
             <path class="circle-bg"
                 d="M18 2.0845
                 a 15.9155 15.9155 0 0 1 0 31.831
                 a 15.9155 15.9155 0 0 1 0 -31.831"
             />
             <path id="circle" class="circle"
-                [@circleTrigger]="{value: move ? false : true, params: {finalValue: (imdb.rating * 10), red: ((10 - imdb.rating) * 25.5), green: (imdb.rating * 25.5)}}"
+                [@circleTrigger]="{value: move ? false : true, params: {value1: imdb.rating, red1: (255 - (imdb.rating - 50) * 5.1), green1: (imdb.rating * 5.1), value2: (imdb.rating * 2), red2: (255 - ((imdb.rating * 2) - 50) * 5.1), green2: ((imdb.rating * 2) * 5.1), value3: (imdb.rating * 3), red3: (255 - ((imdb.rating * 3) - 50) * 5.1), green3: ((imdb.rating * 3) * 5.1), value4: (imdb.rating * 4), red4: (255 - ((imdb.rating * 4) - 50) * 5.1), green4: ((imdb.rating * 4) * 5.1), value5: (imdb.rating * 5), red5: (255 - ((imdb.rating * 5) - 50) * 5.1), green5: ((imdb.rating * 5) * 5.1), value6: (imdb.rating * 6), red6: (255 - ((imdb.rating * 6) - 50) * 5.1), green6: ((imdb.rating * 6) * 5.1), value7: (imdb.rating * 7), red7: (255 - ((imdb.rating * 7) - 50) * 5.1), green7: ((imdb.rating * 7) * 5.1), value8: (imdb.rating * 8), red8: (255 - ((imdb.rating * 8) - 50) * 5.1), green8: ((imdb.rating * 8) * 5.1), value9: (imdb.rating * 9), red9: (255 - ((imdb.rating * 9) - 50) * 5.1), green9: ((imdb.rating * 9) * 5.1), value10: (imdb.rating * 10), red10: (255 - ((imdb.rating * 10) - 50) * 5.1), green10: ((imdb.rating * 10) * 5.1)}}"
+                [attr.stroke]="'rgb(' + (255 - ((this.imdb.rating * 10) - 50) * 5.1) + ', ' + (imdb.rating * 10 * 5.1) + ', 0)'"
                 [attr.stroke-dasharray]="(imdb.rating * 10) + ', 100'"
                 d="M18 2.0845
                 a 15.9155 15.9155 0 0 1 0 31.831

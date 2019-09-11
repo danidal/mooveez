@@ -8,9 +8,7 @@
             <app-sidebar></app-sidebar>
         </div>
         <div class="content-container full-height no-padding">
-            <app-home-content (selectMovieEvent)="selectMovie($event)"></app-home-content>
+            <app-search-content></app-search-content>
         </div>
     </div>
 </div>
-
-<app-comments-dialog *ngIf="selectedMovie" [movie]="selectedMovie"></app-comments-dialog>

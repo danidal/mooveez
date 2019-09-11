@@ -8,35 +8,52 @@ import { Movie } from '../_models/movies';
 })
 export class MoviesService {
   movies: Movie[];
+  selectedMovie: Movie;
+
+  promise = new Promise((resolve, reject) => {
+    this.http
+      .get<Movie[]>(`http://localhost:4000/movies`)
+      .toPromise()
+      .then(
+        res => {
+          debugger;
+          this.movies = res;
+          resolve();
+        },
+        msg => {
+          debugger;
+          reject(msg);
+        }
+      );
+  });
 
   constructor(private http: HttpClient) {
     this.movies = [];
   }
 
   getAll() {
-    const promise = new Promise((resolve, reject) => {
+    /* const promise = new Promise((resolve, reject) => {
       this.http
         .get<Movie[]>(`http://localhost:4000/movies`)
         .toPromise()
         .then(
           res => {
-            // Success
+            debugger;
             this.movies = res;
             resolve();
           },
           msg => {
-            // Error
+            debugger;
             reject(msg);
           }
         );
     });
-    return promise;
+    return promise; */
+    return this.promise;
   }
 
   updateOneFav(id: string, isFav: boolean) {
-    debugger;
     const promise = new Promise((resolve, reject) => {
-      debugger;
       this.http
         .put<any>(`http://localhost:4000/movies/current/${id}`, {isFav})
         .toPromise()
@@ -56,6 +73,7 @@ export class MoviesService {
   getByIdFromLocal(id: string) {
     for (const movie of this.movies) {
       if (movie._id === id) {
+        this.selectedMovie = movie;
         return movie;
       }
     }

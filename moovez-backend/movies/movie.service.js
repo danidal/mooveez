@@ -10,6 +10,8 @@ module.exports = {
 
 async function getAll() {
     const movies = await Movie.find({year: {$gte: 1990}, type: 'movie', poster:{$ne:null}}).limit(500);
+    /* const movies = await Movie.find({year: {$gte: 1990}, type: 'movie', poster:{$ne:null}}); */
+    /* const movies = await Movie.find({type: 'movie', poster:{$ne:null}}); */
     return movies;
 }
 
